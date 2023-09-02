@@ -23,9 +23,9 @@ int	main(int argc, char *argv[])
 	nums.reserve(argc - 1);
 	
 	char *endptr;
-	unsigned long long num;
+	long long num;
 	for (int i = 1; i < argc; ++i) {
-		num = std::strtoull(argv[i], &endptr, 10);
+		num = std::strtoll(argv[i], &endptr, 10);
 		if (*endptr != '\0') {
 			std::cout << "Error: invalid argument: " << argv[i] << '\n';
 			return 0;
